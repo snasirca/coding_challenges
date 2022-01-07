@@ -1,12 +1,16 @@
-RSpec.describe CodingChallenges::RemoveDuplicatesFromSortedArray do
-  subject { CodingChallenges::RemoveDuplicatesFromSortedArray }
+module CodingChallenges
+  class RemoveDuplicatesFromSortedArray
+    def remove_duplicates(nums)
+      unique_nums_tracker = 0
 
-  it "has a version number" do
-    initial = [1,1,2]
-    expected = [1,2]
+      (0..nums.length - 1).each do |index|
+        if nums[index] != nums[index + 1]
+          nums[unique_nums_tracker] = nums[index]
+          unique_nums_tracker += 1
+        end
+      end
 
-    actual = subject.execute(initial)
-
-    expect(actual.first(expected.length)).to eq(expected)
+      unique_nums_tracker
+    end
   end
 end
