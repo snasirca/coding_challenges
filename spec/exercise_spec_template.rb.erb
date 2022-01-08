@@ -1,0 +1,13 @@
+require "coding_challenges/<%= ENV["EXERCISE_KEY"] %>"
+
+RSpec.describe CodingChallenges::<%= ENV["EXERCISE_CLASS_NAME"] %> do
+  subject { CodingChallenges::<%= ENV["EXERCISE_CLASS_NAME"] %>.new }
+
+  it "1" do
+    nums = [1, 2, 3]
+
+    diff = subject.<%= ENV["EXERCISE_MAIN_METHOD"] %>(nums)
+
+    expect(diff).to eq(999)
+  end
+end
