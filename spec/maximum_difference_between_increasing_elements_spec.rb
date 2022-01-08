@@ -1,7 +1,7 @@
-require "coding_challenges/maximum_difference_between_increasing_elements"
+require "coding_challenges/two_furthest_houses_with_different_colors"
 
-RSpec.describe CodingChallenges::MaximumDifferenceBetweenIncreasingElements do
-  subject { CodingChallenges::MaximumDifferenceBetweenIncreasingElements.new }
+RSpec.describe CodingChallenges::TwoFurthestHousesWithDifferentColors do
+  subject { CodingChallenges::TwoFurthestHousesWithDifferentColors.new }
 
   it "1" do
     nums = [7,1,5,4]
@@ -11,7 +11,7 @@ RSpec.describe CodingChallenges::MaximumDifferenceBetweenIncreasingElements do
     expect(diff).to eq(4)
   end
 
-  it "2" do
+  it "2 - no max diff" do
     nums = [9,4,3,2]
 
     diff = subject.maximum_difference(nums)
@@ -27,7 +27,7 @@ RSpec.describe CodingChallenges::MaximumDifferenceBetweenIncreasingElements do
     expect(diff).to eq(9)
   end
 
-  it "4" do
+  it "4 - duplicated min values" do
     nums = [9,4,3,3,2]
 
     diff = subject.maximum_difference(nums)
