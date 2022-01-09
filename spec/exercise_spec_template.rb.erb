@@ -6,8 +6,8 @@ RSpec.describe CodingChallenges::<%= ENV["EXERCISE_CLASS_NAME"] %> do
   it "1" do
     nums = [1, 2, 3]
 
-    diff = subject.<%= ENV["EXERCISE_MAIN_METHOD"] %>(nums)
+    result = subject.<%= ENV["EXERCISE_MAIN_METHOD"] %>(nums)
 
-    expect(diff).to eq(999)
+    expect(result).to eq(999)
   end
 end
