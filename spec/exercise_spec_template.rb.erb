@@ -4,9 +4,9 @@ RSpec.describe CodingChallenges::<%= ENV["EXERCISE_CLASS_NAME"] %> do
   subject { CodingChallenges::<%= ENV["EXERCISE_CLASS_NAME"] %>.new }
 
   it "1" do
-    nums = [1, 2, 3]
+    s = [1, 2, 3]
 
-    result = subject.<%= ENV["EXERCISE_MAIN_METHOD"] %>(nums)
+    result = subject.<%= ENV["EXERCISE_MAIN_METHOD"] %>
 
     expect(result).to eq(999)
   end
