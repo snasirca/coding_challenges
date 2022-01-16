@@ -10,4 +10,8 @@ class TreeNode
   def to_s
     "{val: #{@val}, left: #{@left.val if @left}, right: #{@right.val if @right}}"
   end
+
+  def ==(other)
+    @val == other.val && @left == other.left && @right == other.right
+  end
 end
