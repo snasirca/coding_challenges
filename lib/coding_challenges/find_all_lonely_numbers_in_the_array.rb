@@ -1,6 +1,23 @@
 module CodingChallenges
   class FindAllLonelyNumbersInTheArray
     def find_lonely(nums)
+      lookup_table = {}
+      nums.each do |num|
+        if lookup_table.key?(num)
+          lookup_table[num] += 1
+        else
+          lookup_table[num] = 1
+        end
+      end
+      nums.filter do |num|
+        if lookup_table[num] == 1 && !lookup_table.key?(num + 1) &&
+          !lookup_table.key?(num - 1)
+          num
+        end
+      end
+    end
+
+    def find_lonely_brute(nums)
       result = []
       nums.sort!
       nums.each_with_index do |num, index|
