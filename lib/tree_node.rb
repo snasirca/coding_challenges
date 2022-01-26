@@ -12,6 +12,7 @@ class TreeNode
   end
 
   def ==(other)
+    return false unless other
     @val == other.val && @left == other.left && @right == other.right
   end
 end
