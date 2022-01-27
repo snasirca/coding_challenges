@@ -1,5 +1,5 @@
 require 'rspec/autorun'
-require 'algorithms'
+require "algorithms"
 
 include Containers
 
