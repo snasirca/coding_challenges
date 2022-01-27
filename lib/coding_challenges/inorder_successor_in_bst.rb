@@ -5,6 +5,20 @@ include Containers
 module CodingChallenges
   class InorderSuccessorInBST
     def inorder_successor(root, p)
+      successor = nil
+      curr = root
+      while curr != nil
+        if curr.val > p.val
+          successor = curr
+          curr = curr.left
+        else
+          curr = curr.right
+        end
+      end
+      successor
+    end
+
+    def inorder_successor_brute(root, p)
       stack = Stack.new
       p_found = false
       curr = root
