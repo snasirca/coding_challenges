@@ -1,17 +1,6 @@
-require "coding_challenges/remove_nth_from_end_of_list"
+require "coding_challenges/remove_nth_node_from_end_of_list"
 
-RSpec.describe CodingChallenges::RemoveNthNodeFromEndOfList do
-  subject { CodingChallenges::RemoveNthNodeFromEndOfList.new }
-
-  class ListNode
-    attr_accessor :val, :next
-
-    def initialize(val, next_val = nil)
-      @val = val
-      @next = next_val
-    end
-  end
-
+RSpec.describe "Solution" do
   it "1" do
     head =
       ListNode.new(1,
@@ -22,7 +11,7 @@ RSpec.describe CodingChallenges::RemoveNthNodeFromEndOfList do
               )))))
     n = 2
 
-    result = subject.remove_nth_from_end(head, n)
+    result = remove_nth_from_end(head, n)
 
     expect(result.val).to eq(1)
     expect(result.next.val).to eq(2)
@@ -35,7 +24,7 @@ RSpec.describe CodingChallenges::RemoveNthNodeFromEndOfList do
     head = ListNode.new(1)
     n = 1
 
-    result = subject.remove_nth_from_end(head, n)
+    result = remove_nth_from_end(head, n)
 
     expect(result).to eq(nil)
   end
@@ -47,7 +36,7 @@ RSpec.describe CodingChallenges::RemoveNthNodeFromEndOfList do
         ))
     n = 1
 
-    result = subject.remove_nth_from_end(head, n)
+    result = remove_nth_from_end(head, n)
 
     expect(result.val).to eq(1)
     expect(result.next).to eq(nil)
@@ -60,7 +49,7 @@ RSpec.describe CodingChallenges::RemoveNthNodeFromEndOfList do
         ))
     n = 2
 
-    result = subject.remove_nth_from_end(head, n)
+    result = remove_nth_from_end(head, n)
 
     expect(result.val).to eq(2)
     expect(result.next).to eq(nil)
@@ -74,7 +63,7 @@ RSpec.describe CodingChallenges::RemoveNthNodeFromEndOfList do
           )))
     n = 3
 
-    result = subject.remove_nth_from_end(head, n)
+    result = remove_nth_from_end(head, n)
 
     expect(result.val).to eq(2)
     expect(result.next.val).to eq(3)

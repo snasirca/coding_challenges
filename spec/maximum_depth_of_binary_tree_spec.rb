@@ -1,9 +1,6 @@
 require "coding_challenges/maximum_depth_of_binary_tree"
-require "tree_node"
 
-RSpec.describe CodingChallenges::MaximumDepthOfBinaryTree do
-  subject { CodingChallenges::MaximumDepthOfBinaryTree.new }
-
+RSpec.describe "Solution" do
   it "1" do
     root =
       TreeNode.new(3,
@@ -14,7 +11,7 @@ RSpec.describe CodingChallenges::MaximumDepthOfBinaryTree do
         )
       )
 
-    result = subject.max_depth(root)
+    result = max_depth(root)
 
     expect(result).to eq(3)
   end
@@ -26,7 +23,7 @@ RSpec.describe CodingChallenges::MaximumDepthOfBinaryTree do
         TreeNode.new(2)
       )
 
-    result = subject.max_depth(root)
+    result = max_depth(root)
 
     expect(result).to eq(2)
   end
@@ -34,7 +31,7 @@ RSpec.describe CodingChallenges::MaximumDepthOfBinaryTree do
   it "3" do
     root = TreeNode.new(1)
 
-    result = subject.max_depth(root)
+    result = max_depth(root)
 
     expect(result).to eq(1)
   end
@@ -42,7 +39,7 @@ RSpec.describe CodingChallenges::MaximumDepthOfBinaryTree do
   it "4" do
     root = nil
 
-    result = subject.max_depth(root)
+    result = max_depth(root)
 
     expect(result).to eq(0)
   end

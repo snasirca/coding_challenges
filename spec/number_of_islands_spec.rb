@@ -1,8 +1,6 @@
 require "coding_challenges/number_of_islands"
 
-RSpec.describe CodingChallenges::NumberOfIslands do
-  subject { CodingChallenges::NumberOfIslands.new }
-
+RSpec.describe "Solution" do
   it "1" do
     grid = [
       %w[1 1 1 1 0],
@@ -11,7 +9,7 @@ RSpec.describe CodingChallenges::NumberOfIslands do
       %w[0 0 0 0 0]
     ]
 
-    result = subject.num_islands(grid)
+    result = num_islands(grid)
 
     expect(result).to eq(1)
   end
@@ -24,7 +22,7 @@ RSpec.describe CodingChallenges::NumberOfIslands do
       %w[0 0 0 1 1]
     ]
 
-    result = subject.num_islands(grid)
+    result = num_islands(grid)
 
     expect(result).to eq(3)
   end
@@ -35,7 +33,7 @@ RSpec.describe CodingChallenges::NumberOfIslands do
       %w[0 1],
     ]
 
-    result = subject.num_islands(grid)
+    result = num_islands(grid)
 
     expect(result).to eq(2)
   end
@@ -46,7 +44,7 @@ RSpec.describe CodingChallenges::NumberOfIslands do
       %w[0 0],
     ]
 
-    result = subject.num_islands(grid)
+    result = num_islands(grid)
 
     expect(result).to eq(0)
   end
@@ -58,7 +56,7 @@ RSpec.describe CodingChallenges::NumberOfIslands do
       %w[1 0],
     ]
 
-    result = subject.num_islands(grid)
+    result = num_islands(grid)
 
     expect(result).to eq(3)
   end
@@ -68,7 +66,7 @@ RSpec.describe CodingChallenges::NumberOfIslands do
       %w[1],
     ]
 
-    result = subject.num_islands(grid)
+    result = num_islands(grid)
 
     expect(result).to eq(1)
   end
@@ -78,7 +76,7 @@ RSpec.describe CodingChallenges::NumberOfIslands do
       %w[0],
     ]
 
-    result = subject.num_islands(grid)
+    result = num_islands(grid)
 
     expect(result).to eq(0)
   end

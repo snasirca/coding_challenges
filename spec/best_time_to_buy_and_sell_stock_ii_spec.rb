@@ -1,12 +1,10 @@
 require "coding_challenges/best_time_to_buy_and_sell_stock_ii"
 
-RSpec.describe CodingChallenges::BestTimeToBuyAndSellStockII do
-  subject { CodingChallenges::BestTimeToBuyAndSellStockII.new }
-
+RSpec.describe "Solution" do
   it "1" do
     nums = [7, 1, 5, 3, 6, 4]
 
-    result = subject.max_profit(nums)
+    result = max_profit(nums)
 
     expect(result).to eq(7)
   end
@@ -14,7 +12,7 @@ RSpec.describe CodingChallenges::BestTimeToBuyAndSellStockII do
   it "2" do
     nums = [1, 2, 3, 4, 5]
 
-    result = subject.max_profit(nums)
+    result = max_profit(nums)
 
     expect(result).to eq(4)
   end
@@ -22,7 +20,7 @@ RSpec.describe CodingChallenges::BestTimeToBuyAndSellStockII do
   it "3" do
     nums = [7, 6, 4, 3, 1]
 
-    result = subject.max_profit(nums)
+    result = max_profit(nums)
 
     expect(result).to eq(0)
   end
@@ -30,7 +28,7 @@ RSpec.describe CodingChallenges::BestTimeToBuyAndSellStockII do
   it "4" do
     nums = [3, 6, 4]
 
-    result = subject.max_profit(nums)
+    result = max_profit(nums)
 
     expect(result).to eq(3)
   end
@@ -38,7 +36,7 @@ RSpec.describe CodingChallenges::BestTimeToBuyAndSellStockII do
   it "5" do
     nums = [6, 4]
 
-    result = subject.max_profit(nums)
+    result = max_profit(nums)
 
     expect(result).to eq(0)
   end
@@ -46,7 +44,7 @@ RSpec.describe CodingChallenges::BestTimeToBuyAndSellStockII do
   it "6" do
     nums = [4]
 
-    result = subject.max_profit(nums)
+    result = max_profit(nums)
 
     expect(result).to eq(0)
   end
@@ -54,7 +52,7 @@ RSpec.describe CodingChallenges::BestTimeToBuyAndSellStockII do
   it "7" do
     nums = [1, 2, 3, 4]
 
-    result = subject.max_profit(nums)
+    result = max_profit(nums)
 
     expect(result).to eq(3)
   end

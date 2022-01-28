@@ -1,9 +1,6 @@
 require "coding_challenges/inorder_successor_in_bst"
-require "tree_node"
 
-RSpec.describe CodingChallenges::InorderSuccessorInBST do
-  subject { CodingChallenges::InorderSuccessorInBST.new }
-
+RSpec.describe "Solution" do
   it "1" do
     p = TreeNode.new(1)
     root =
@@ -12,7 +9,7 @@ RSpec.describe CodingChallenges::InorderSuccessorInBST do
         TreeNode.new(3)
       )
 
-    result = subject.inorder_successor(root, p)
+    result = inorder_successor(root, p)
 
     expect(result.val).to eq(2)
   end
@@ -30,7 +27,7 @@ RSpec.describe CodingChallenges::InorderSuccessorInBST do
         p
       )
 
-    result = subject.inorder_successor(root, p)
+    result = inorder_successor(root, p)
 
     expect(result).to eq(nil)
   end
@@ -44,7 +41,7 @@ RSpec.describe CodingChallenges::InorderSuccessorInBST do
         TreeNode.new(3)
       )
 
-    result = subject.inorder_successor(root, p)
+    result = inorder_successor(root, p)
 
     expect(result.val).to eq(2)
   end
@@ -60,7 +57,7 @@ RSpec.describe CodingChallenges::InorderSuccessorInBST do
         TreeNode.new(5)
       )
 
-    result = subject.inorder_successor(root, p)
+    result = inorder_successor(root, p)
 
     expect(result.val).to eq(4)
   end
@@ -73,7 +70,7 @@ RSpec.describe CodingChallenges::InorderSuccessorInBST do
       )
     p = root
 
-    result = subject.inorder_successor(root, p)
+    result = inorder_successor(root, p)
 
     expect(result.val).to eq(3)
   end
@@ -94,7 +91,7 @@ RSpec.describe CodingChallenges::InorderSuccessorInBST do
           TreeNode.new(9))
       )
 
-    result = subject.inorder_successor(root, p)
+    result = inorder_successor(root, p)
 
     expect(result.val).to eq(3)
   end

@@ -1,13 +1,11 @@
 require "coding_challenges/minimum_moves_to_reach_target_score"
 
-RSpec.describe CodingChallenges::MinimumMovesToReachTargetScore do
-  subject { CodingChallenges::MinimumMovesToReachTargetScore.new }
-
+RSpec.describe "Solution" do
   it "1" do
     target = 5
     max_doubles = 0
 
-    result = subject.min_moves(target, max_doubles)
+    result = min_moves(target, max_doubles)
 
     expect(result).to eq(4)
   end
@@ -16,7 +14,7 @@ RSpec.describe CodingChallenges::MinimumMovesToReachTargetScore do
     target = 19
     max_doubles = 2
 
-    result = subject.min_moves(target, max_doubles)
+    result = min_moves(target, max_doubles)
 
     expect(result).to eq(7)
   end
@@ -25,7 +23,7 @@ RSpec.describe CodingChallenges::MinimumMovesToReachTargetScore do
     target = 10
     max_doubles = 4
 
-    result = subject.min_moves(target, max_doubles)
+    result = min_moves(target, max_doubles)
 
     expect(result).to eq(4)
   end
@@ -34,7 +32,7 @@ RSpec.describe CodingChallenges::MinimumMovesToReachTargetScore do
     target = 1
     max_doubles = 999
 
-    result = subject.min_moves(target, max_doubles)
+    result = min_moves(target, max_doubles)
 
     expect(result).to eq(0)
   end
@@ -43,7 +41,7 @@ RSpec.describe CodingChallenges::MinimumMovesToReachTargetScore do
     target = 2
     max_doubles = 999
 
-    result = subject.min_moves(target, max_doubles)
+    result = min_moves(target, max_doubles)
 
     expect(result).to eq(1)
   end
@@ -52,7 +50,7 @@ RSpec.describe CodingChallenges::MinimumMovesToReachTargetScore do
     target = 3
     max_doubles = 999
 
-    result = subject.min_moves(target, max_doubles)
+    result = min_moves(target, max_doubles)
 
     expect(result).to eq(2)
   end
@@ -61,7 +59,7 @@ RSpec.describe CodingChallenges::MinimumMovesToReachTargetScore do
     target = 656101987
     max_doubles = 1
 
-    result = subject.min_moves(target, max_doubles)
+    result = min_moves(target, max_doubles)
 
     expect(result).to eq(328050994)
   end

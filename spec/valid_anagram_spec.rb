@@ -1,13 +1,11 @@
 require "coding_challenges/valid_anagram"
 
-RSpec.describe CodingChallenges::ValidAnagram do
-  subject { CodingChallenges::ValidAnagram.new }
-
+RSpec.describe "Solution" do
   it "1" do
     s = "anagram"
     t = "nagaram"
 
-    result = subject.is_anagram(s, t)
+    result = is_anagram(s, t)
 
     expect(result).to eq(true)
   end
@@ -16,7 +14,7 @@ RSpec.describe CodingChallenges::ValidAnagram do
     s = "rat"
     t = "car"
 
-    result = subject.is_anagram(s, t)
+    result = is_anagram(s, t)
 
     expect(result).to eq(false)
   end
@@ -25,7 +23,7 @@ RSpec.describe CodingChallenges::ValidAnagram do
     s = "a"
     t = "a"
 
-    result = subject.is_anagram(s, t)
+    result = is_anagram(s, t)
 
     expect(result).to eq(true)
   end
@@ -34,7 +32,7 @@ RSpec.describe CodingChallenges::ValidAnagram do
     s = "a"
     t = "b"
 
-    result = subject.is_anagram(s, t)
+    result = is_anagram(s, t)
 
     expect(result).to eq(false)
   end
@@ -43,7 +41,7 @@ RSpec.describe CodingChallenges::ValidAnagram do
     s = "a"
     t = "ab"
 
-    result = subject.is_anagram(s, t)
+    result = is_anagram(s, t)
 
     expect(result).to eq(false)
   end

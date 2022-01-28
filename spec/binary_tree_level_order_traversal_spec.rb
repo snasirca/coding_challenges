@@ -1,9 +1,6 @@
 require "coding_challenges/binary_tree_level_order_traversal"
-require "tree_node"
 
-RSpec.describe CodingChallenges::BinaryTreeLevelOrderTraversal do
-  subject { CodingChallenges::BinaryTreeLevelOrderTraversal.new }
-
+RSpec.describe "Solution" do
   it "1" do
     root =
       TreeNode.new(3,
@@ -14,7 +11,7 @@ RSpec.describe CodingChallenges::BinaryTreeLevelOrderTraversal do
         )
       )
 
-    result = subject.level_order(root)
+    result = level_order(root)
 
     expect(result).to eq([[3], [9, 20], [15, 7]])
   end
@@ -22,7 +19,7 @@ RSpec.describe CodingChallenges::BinaryTreeLevelOrderTraversal do
   it "2" do
     root = TreeNode.new(1)
 
-    result = subject.level_order(root)
+    result = level_order(root)
 
     expect(result).to eq([[1]])
   end
@@ -30,7 +27,7 @@ RSpec.describe CodingChallenges::BinaryTreeLevelOrderTraversal do
   it "3" do
     root = nil
 
-    result = subject.level_order(root)
+    result = level_order(root)
 
     expect(result).to eq([])
   end
@@ -42,7 +39,7 @@ RSpec.describe CodingChallenges::BinaryTreeLevelOrderTraversal do
         TreeNode.new(3)
       )
 
-    result = subject.level_order(root)
+    result = level_order(root)
 
     expect(result).to eq([[1], [2, 3]])
   end
@@ -54,7 +51,7 @@ RSpec.describe CodingChallenges::BinaryTreeLevelOrderTraversal do
         TreeNode.new(3)
       )
 
-    result = subject.level_order(root)
+    result = level_order(root)
 
     expect(result).to eq([[1], [3]])
   end
@@ -66,7 +63,7 @@ RSpec.describe CodingChallenges::BinaryTreeLevelOrderTraversal do
         nil,
       )
 
-    result = subject.level_order(root)
+    result = level_order(root)
 
     expect(result).to eq([[1], [2]])
   end
@@ -82,7 +79,7 @@ RSpec.describe CodingChallenges::BinaryTreeLevelOrderTraversal do
         ),
       )
 
-    result = subject.level_order(root)
+    result = level_order(root)
 
     expect(result).to eq([[1], [2], [3]])
   end
@@ -108,7 +105,7 @@ RSpec.describe CodingChallenges::BinaryTreeLevelOrderTraversal do
         )
       )
 
-    result = subject.level_order(root)
+    result = level_order(root)
 
     expect(result).to eq([[3], [9, 20], [11, 5, 7], [13, 56, 6, 8, 12, 19]])
   end

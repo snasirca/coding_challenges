@@ -1,12 +1,10 @@
 require "coding_challenges/solving_questions_with_brainpower"
 
-RSpec.describe CodingChallenges::SolvingQuestionsWithBrainpower do
-  subject { CodingChallenges::SolvingQuestionsWithBrainpower.new }
-
+RSpec.describe "Solution" do
   it "1" do
     questions = [[2, 5]]
 
-    result = subject.most_points(questions)
+    result = most_points(questions)
 
     expect(result).to eq(2)
   end
@@ -14,7 +12,7 @@ RSpec.describe CodingChallenges::SolvingQuestionsWithBrainpower do
   it "2" do
     questions = [[4, 4], [2, 5]]
 
-    result = subject.most_points(questions)
+    result = most_points(questions)
 
     expect(result).to eq(4)
   end
@@ -22,7 +20,7 @@ RSpec.describe CodingChallenges::SolvingQuestionsWithBrainpower do
   it "3" do
     questions = [[3, 2], [4, 3], [4, 4], [2, 5]]
 
-    result = subject.most_points(questions)
+    result = most_points(questions)
 
     expect(result).to eq(5)
   end
@@ -30,7 +28,7 @@ RSpec.describe CodingChallenges::SolvingQuestionsWithBrainpower do
   it "4" do
     questions = [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5]]
 
-    result = subject.most_points(questions)
+    result = most_points(questions)
 
     expect(result).to eq(7)
   end
@@ -38,7 +36,7 @@ RSpec.describe CodingChallenges::SolvingQuestionsWithBrainpower do
   it "5" do
     questions = [[1, 1], [1, 1]]
 
-    result = subject.most_points(questions)
+    result = most_points(questions)
 
     expect(result).to eq(1)
   end
@@ -46,7 +44,7 @@ RSpec.describe CodingChallenges::SolvingQuestionsWithBrainpower do
   it "6" do
     questions = [[1, 1], [1, 1], [1, 1]]
 
-    result = subject.most_points(questions)
+    result = most_points(questions)
 
     expect(result).to eq(2)
   end
@@ -54,7 +52,7 @@ RSpec.describe CodingChallenges::SolvingQuestionsWithBrainpower do
   it "7" do
     questions = [[12, 46], [78, 19], [63, 15], [79, 62], [13, 10]]
 
-    result = subject.most_points(questions)
+    result = most_points(questions)
 
     expect(result).to eq(79)
   end

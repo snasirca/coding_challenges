@@ -1,12 +1,10 @@
 require "coding_challenges/longest_substring_without_repeating_characters"
 
-RSpec.describe CodingChallenges::LongestSubstringWithoutRepeatingCharacters do
-  subject { CodingChallenges::LongestSubstringWithoutRepeatingCharacters.new }
-
+RSpec.describe "Solution" do
   it "1" do
     s = ""
 
-    result = subject.length_of_longest_substring(s)
+    result = length_of_longest_substring(s)
 
     expect(result).to eq(0)
   end
@@ -14,7 +12,7 @@ RSpec.describe CodingChallenges::LongestSubstringWithoutRepeatingCharacters do
   it "2" do
     s = "a"
 
-    result = subject.length_of_longest_substring(s)
+    result = length_of_longest_substring(s)
 
     expect(result).to eq(1)
   end
@@ -22,7 +20,7 @@ RSpec.describe CodingChallenges::LongestSubstringWithoutRepeatingCharacters do
   it "3" do
     s = "abcabcbb"
 
-    result = subject.length_of_longest_substring(s)
+    result = length_of_longest_substring(s)
 
     expect(result).to eq(3)
   end
@@ -30,7 +28,7 @@ RSpec.describe CodingChallenges::LongestSubstringWithoutRepeatingCharacters do
   it "4" do
     s = "bbbbb"
 
-    result = subject.length_of_longest_substring(s)
+    result = length_of_longest_substring(s)
 
     expect(result).to eq(1)
   end
@@ -38,7 +36,7 @@ RSpec.describe CodingChallenges::LongestSubstringWithoutRepeatingCharacters do
   it "5" do
     s = "pwwkew"
 
-    result = subject.length_of_longest_substring(s)
+    result = length_of_longest_substring(s)
 
     expect(result).to eq(3)
   end
@@ -46,7 +44,7 @@ RSpec.describe CodingChallenges::LongestSubstringWithoutRepeatingCharacters do
   it "6" do
     s = "aj;slkdfja;plo   sieyrlkj;alskdj;alskdfj;alskdjf"
 
-    result = subject.length_of_longest_substring(s)
+    result = length_of_longest_substring(s)
 
     expect(result).to eq(11)
   end
@@ -54,7 +52,7 @@ RSpec.describe CodingChallenges::LongestSubstringWithoutRepeatingCharacters do
   it "7" do
     s = "aab"
 
-    result = subject.length_of_longest_substring(s)
+    result = length_of_longest_substring(s)
 
     expect(result).to eq(2)
   end
@@ -62,7 +60,7 @@ RSpec.describe CodingChallenges::LongestSubstringWithoutRepeatingCharacters do
   it "8" do
     s = "dvdfdvdfdvdfdvdf"
 
-    result = subject.length_of_longest_substring(s)
+    result = length_of_longest_substring(s)
 
     expect(result).to eq(3)
   end
@@ -70,7 +68,7 @@ RSpec.describe CodingChallenges::LongestSubstringWithoutRepeatingCharacters do
   it "9" do
     s = "bbtablud"
 
-    result = subject.length_of_longest_substring(s)
+    result = length_of_longest_substring(s)
 
     expect(result).to eq(6)
   end
@@ -78,7 +76,7 @@ RSpec.describe CodingChallenges::LongestSubstringWithoutRepeatingCharacters do
   it "10" do
     s = "bpfbhmipx"
 
-    result = subject.length_of_longest_substring(s)
+    result = length_of_longest_substring(s)
 
     expect(result).to eq(7)
   end

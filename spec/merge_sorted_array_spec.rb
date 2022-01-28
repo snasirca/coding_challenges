@@ -1,15 +1,13 @@
 require "coding_challenges/merge_sorted_array"
 
-RSpec.describe CodingChallenges::MergeSortedArray do
-  subject { CodingChallenges::MergeSortedArray.new }
-
+RSpec.describe "Solution" do
   it "1" do
     nums1 = [1, 2, 3, 0, 0, 0]
     m = 3
     nums2 = [2, 5, 6]
     n = 3
 
-    result = subject.merge(nums1, m, nums2, n)
+    result = merge(nums1, m, nums2, n)
 
     expect(result).to eq([1, 2, 2, 3, 5, 6])
   end
@@ -20,7 +18,7 @@ RSpec.describe CodingChallenges::MergeSortedArray do
     nums2 = []
     n = 0
 
-    result = subject.merge(nums1, m, nums2, n)
+    result = merge(nums1, m, nums2, n)
 
     expect(result).to eq([1])
   end
@@ -31,7 +29,7 @@ RSpec.describe CodingChallenges::MergeSortedArray do
     nums2 = [1]
     n = 1
 
-    result = subject.merge(nums1, m, nums2, n)
+    result = merge(nums1, m, nums2, n)
 
     expect(result).to eq([1])
   end
@@ -42,7 +40,7 @@ RSpec.describe CodingChallenges::MergeSortedArray do
     nums2 = [1, 2]
     n = 2
 
-    result = subject.merge(nums1, m, nums2, n)
+    result = merge(nums1, m, nums2, n)
 
     expect(result).to eq([1, 2])
   end
@@ -53,7 +51,7 @@ RSpec.describe CodingChallenges::MergeSortedArray do
     nums2 = []
     n = 0
 
-    result = subject.merge(nums1, m, nums2, n)
+    result = merge(nums1, m, nums2, n)
 
     expect(result).to eq([1, 2])
   end
@@ -64,7 +62,7 @@ RSpec.describe CodingChallenges::MergeSortedArray do
     nums2 = [1]
     n = 1
 
-    result = subject.merge(nums1, m, nums2, n)
+    result = merge(nums1, m, nums2, n)
 
     expect(result).to eq([1, 1, 2])
   end
@@ -75,7 +73,7 @@ RSpec.describe CodingChallenges::MergeSortedArray do
     nums2 = []
     n = 0
 
-    result = subject.merge(nums1, m, nums2, n)
+    result = merge(nums1, m, nums2, n)
 
     expect(result).to eq([])
   end

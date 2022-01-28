@@ -1,14 +1,12 @@
 require "coding_challenges/divide_a_string_into_groups_of_size_k"
 
-RSpec.describe CodingChallenges::DivideAStringIntoGroupsOfSizeK do
-  subject { CodingChallenges::DivideAStringIntoGroupsOfSizeK.new }
-
+RSpec.describe "Solution" do
   it "1" do
     s = "abcdefghi"
     k = 3
     fill = "x"
 
-    result = subject.divide_string(s, k, fill)
+    result = divide_string(s, k, fill)
 
     expect(result).to eq(["abc", "def", "ghi"])
   end
@@ -18,7 +16,7 @@ RSpec.describe CodingChallenges::DivideAStringIntoGroupsOfSizeK do
     k = 3
     fill = "x"
 
-    result = subject.divide_string(s, k, fill)
+    result = divide_string(s, k, fill)
 
     expect(result).to eq(["abc", "def", "ghi", "jxx"])
   end
@@ -28,7 +26,7 @@ RSpec.describe CodingChallenges::DivideAStringIntoGroupsOfSizeK do
     k = 1
     fill = "x"
 
-    result = subject.divide_string(s, k, fill)
+    result = divide_string(s, k, fill)
 
     expect(result).to eq(["a", "b"])
   end
@@ -38,7 +36,7 @@ RSpec.describe CodingChallenges::DivideAStringIntoGroupsOfSizeK do
     k = 1
     fill = "x"
 
-    result = subject.divide_string(s, k, fill)
+    result = divide_string(s, k, fill)
 
     expect(result).to eq(["a"])
   end
@@ -48,7 +46,7 @@ RSpec.describe CodingChallenges::DivideAStringIntoGroupsOfSizeK do
     k = 3
     fill = "x"
 
-    result = subject.divide_string(s, k, fill)
+    result = divide_string(s, k, fill)
 
     expect(result).to eq(["axx"])
   end
@@ -58,7 +56,7 @@ RSpec.describe CodingChallenges::DivideAStringIntoGroupsOfSizeK do
     k = 8
     fill = "n"
 
-    result = subject.divide_string(s, k, fill)
+    result = divide_string(s, k, fill)
 
     expect(result).to eq(["ctoyjrwt", "ngqwtnnn"])
   end

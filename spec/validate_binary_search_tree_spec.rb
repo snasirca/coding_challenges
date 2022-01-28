@@ -1,9 +1,6 @@
 require "coding_challenges/validate_binary_search_tree"
-require "tree_node"
 
-RSpec.describe CodingChallenges::ValidateBinarySearchTree do
-  subject { CodingChallenges::ValidateBinarySearchTree.new }
-
+RSpec.describe "Solution" do
   it "1" do
     root =
       TreeNode.new(2,
@@ -11,7 +8,7 @@ RSpec.describe CodingChallenges::ValidateBinarySearchTree do
         TreeNode.new(3)
       )
 
-    result = subject.is_valid_bst(root)
+    result = is_valid_bst(root)
 
     expect(result).to eq(true)
   end
@@ -26,7 +23,7 @@ RSpec.describe CodingChallenges::ValidateBinarySearchTree do
         )
       )
 
-    result = subject.is_valid_bst(root)
+    result = is_valid_bst(root)
 
     expect(result).to eq(false)
   end
@@ -34,7 +31,7 @@ RSpec.describe CodingChallenges::ValidateBinarySearchTree do
   it "3" do
     root = TreeNode.new(1)
 
-    result = subject.is_valid_bst(root)
+    result = is_valid_bst(root)
 
     expect(result).to eq(true)
   end
@@ -49,7 +46,7 @@ RSpec.describe CodingChallenges::ValidateBinarySearchTree do
         )
       )
 
-    result = subject.is_valid_bst(root)
+    result = is_valid_bst(root)
 
     expect(result).to eq(false)
   end

@@ -1,8 +1,6 @@
 require "coding_challenges/rotate_image"
 
-RSpec.describe CodingChallenges::RotateImage do
-  subject { CodingChallenges::RotateImage.new }
-
+RSpec.describe "Solution" do
   it "1" do
     matrix = [
       [1, 2, 3],
@@ -10,7 +8,7 @@ RSpec.describe CodingChallenges::RotateImage do
       [7, 8, 9]
     ]
 
-    result = subject.rotate(matrix)
+    result = rotate(matrix)
 
     expect(result).to eq([
       [7, 4, 1],
@@ -27,7 +25,7 @@ RSpec.describe CodingChallenges::RotateImage do
       [15, 14, 12, 16]
     ]
 
-    result = subject.rotate(matrix)
+    result = rotate(matrix)
 
     expect(result).to eq([
       [15, 13, 2, 5],
@@ -43,7 +41,7 @@ RSpec.describe CodingChallenges::RotateImage do
       [3, 4]
     ]
 
-    result = subject.rotate(matrix)
+    result = rotate(matrix)
 
     [
       [1, 2],

@@ -1,8 +1,8 @@
 require 'rspec/autorun'
 
 def increasing_triplet(nums)
-  first_num = 2**31 - 1
-  second_num = 2**31 - 1
+  first_num = 2 ** 31 - 1
+  second_num = 2 ** 31 - 1
   nums.each do |num|
     if num <= first_num
       first_num = num
@@ -17,7 +17,7 @@ end
 
 RSpec.describe "Solution" do
   it "510" do
-    nums = [2,4,-2,-3]
+    nums = [2, 4, -2, -3]
 
     result = increasing_triplet(nums)
 

@@ -1,9 +1,6 @@
 require "coding_challenges/binary_tree_preorder_traversal"
-require "tree_node"
 
-RSpec.describe CodingChallenges::BinaryTreePreorderTraversal do
-  subject { CodingChallenges::BinaryTreePreorderTraversal.new }
-
+RSpec.describe "Solution" do
   it "1" do
     root =
       TreeNode.new(1,
@@ -13,7 +10,7 @@ RSpec.describe CodingChallenges::BinaryTreePreorderTraversal do
         )
       )
 
-    result = subject.preorder_traversal(root)
+    result = preorder_traversal(root)
 
     expect(result).to eq([1, 2, 3])
   end
@@ -21,7 +18,7 @@ RSpec.describe CodingChallenges::BinaryTreePreorderTraversal do
   it "2" do
     root = nil
 
-    result = subject.preorder_traversal(root)
+    result = preorder_traversal(root)
 
     expect(result).to eq([])
   end
@@ -29,7 +26,7 @@ RSpec.describe CodingChallenges::BinaryTreePreorderTraversal do
   it "3" do
     root = TreeNode.new(1)
 
-    result = subject.preorder_traversal(root)
+    result = preorder_traversal(root)
 
     expect(result).to eq([1])
   end
@@ -49,7 +46,7 @@ RSpec.describe CodingChallenges::BinaryTreePreorderTraversal do
         TreeNode.new(12)
       )
 
-    result = subject.preorder_traversal(root)
+    result = preorder_traversal(root)
 
     expect(result).to eq([9, 5, 2, 1, 7, 6, 12])
   end

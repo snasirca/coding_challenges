@@ -1,9 +1,6 @@
 require "coding_challenges/symmetric_tree"
-require "tree_node"
 
-RSpec.describe CodingChallenges::SymmetricTree do
-  subject { CodingChallenges::SymmetricTree.new }
-
+RSpec.describe "Solution" do
   it "1" do
     root =
       TreeNode.new(1,
@@ -17,7 +14,7 @@ RSpec.describe CodingChallenges::SymmetricTree do
         )
       )
 
-    result = subject.is_symmetric(root)
+    result = is_symmetric(root)
 
     expect(result).to eq(true)
   end
@@ -35,7 +32,7 @@ RSpec.describe CodingChallenges::SymmetricTree do
         )
       )
 
-    result = subject.is_symmetric(root)
+    result = is_symmetric(root)
 
     expect(result).to eq(false)
   end
@@ -43,7 +40,7 @@ RSpec.describe CodingChallenges::SymmetricTree do
   it "3" do
     root = TreeNode.new(1)
 
-    result = subject.is_symmetric(root)
+    result = is_symmetric(root)
 
     expect(result).to eq(true)
   end
@@ -55,7 +52,7 @@ RSpec.describe CodingChallenges::SymmetricTree do
         TreeNode.new(2)
       )
 
-    result = subject.is_symmetric(root)
+    result = is_symmetric(root)
 
     expect(result).to eq(false)
   end
@@ -67,7 +64,7 @@ RSpec.describe CodingChallenges::SymmetricTree do
         nil
       )
 
-    result = subject.is_symmetric(root)
+    result = is_symmetric(root)
 
     expect(result).to eq(false)
   end
@@ -87,7 +84,7 @@ RSpec.describe CodingChallenges::SymmetricTree do
           ))
       )
 
-    result = subject.is_symmetric(root)
+    result = is_symmetric(root)
 
     expect(result).to eq(false)
   end

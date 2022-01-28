@@ -1,9 +1,6 @@
 require "coding_challenges/convert_sorted_array_to_binary_search_tree"
-require "tree_node"
 
-RSpec.describe CodingChallenges::ConvertSortedArrayToBinarySearchTree do
-  subject { CodingChallenges::ConvertSortedArrayToBinarySearchTree.new }
-
+RSpec.describe "Solution" do
   it "1" do
     nums = [-10, -3, 0, 5, 9]
     expected_tree =
@@ -16,7 +13,7 @@ RSpec.describe CodingChallenges::ConvertSortedArrayToBinarySearchTree do
         ),
       )
 
-    result = subject.sorted_array_to_bst(nums)
+    result = sorted_array_to_bst(nums)
 
     expect(result).to eq(expected_tree)
   end
@@ -28,7 +25,7 @@ RSpec.describe CodingChallenges::ConvertSortedArrayToBinarySearchTree do
         TreeNode.new(1)
       )
 
-    result = subject.sorted_array_to_bst(nums)
+    result = sorted_array_to_bst(nums)
 
     expect(result).to eq(expected_tree)
   end
@@ -37,7 +34,7 @@ RSpec.describe CodingChallenges::ConvertSortedArrayToBinarySearchTree do
     nums = [1]
     expected_tree = TreeNode.new(1)
 
-    result = subject.sorted_array_to_bst(nums)
+    result = sorted_array_to_bst(nums)
 
     expect(result).to eq(expected_tree)
   end
@@ -55,7 +52,7 @@ RSpec.describe CodingChallenges::ConvertSortedArrayToBinarySearchTree do
         ),
       )
 
-    result = subject.sorted_array_to_bst(nums)
+    result = sorted_array_to_bst(nums)
 
     expect(result).to eq(expected_tree)
   end

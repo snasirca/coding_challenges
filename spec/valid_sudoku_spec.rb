@@ -1,8 +1,6 @@
 require "coding_challenges/valid_sudoku"
 
-RSpec.describe CodingChallenges::ValidSudoku do
-  subject { CodingChallenges::ValidSudoku.new }
-
+RSpec.describe "Solution" do
   it "1" do
     board =
       [
@@ -17,7 +15,7 @@ RSpec.describe CodingChallenges::ValidSudoku do
         %w[. . . . 8 . . 7 9]
       ]
 
-    result = subject.is_valid_sudoku(board)
+    result = is_valid_sudoku(board)
 
     expect(result).to eq(true)
   end
@@ -36,7 +34,7 @@ RSpec.describe CodingChallenges::ValidSudoku do
         %w[. . . . 8 . . 7 9]
       ]
 
-    result = subject.is_valid_sudoku(board)
+    result = is_valid_sudoku(board)
 
     expect(result).to eq(false)
   end

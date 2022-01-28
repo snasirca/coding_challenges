@@ -1,21 +1,6 @@
 require "coding_challenges/palindrome_linked_list"
 
-RSpec.describe CodingChallenges::PalindromeLinkedList do
-  subject { CodingChallenges::PalindromeLinkedList.new }
-
-  class ListNode
-    attr_accessor :val, :next
-
-    def initialize(val, next_val = nil)
-      @val = val
-      @next = next_val
-    end
-
-    def to_s
-      "{val: #{@val}, next: #{@next.val if @next}}"
-    end
-  end
-
+RSpec.describe "Solution" do
   it "1" do
     head =
       ListNode.new(1,
@@ -24,7 +9,7 @@ RSpec.describe CodingChallenges::PalindromeLinkedList do
             ListNode.new(1,
             ))))
 
-    result = subject.is_palindrome(head)
+    result = is_palindrome(head)
 
     expect(result).to eq(true)
   end
@@ -35,7 +20,7 @@ RSpec.describe CodingChallenges::PalindromeLinkedList do
         ListNode.new(2,
         ))
 
-    result = subject.is_palindrome(head)
+    result = is_palindrome(head)
 
     expect(result).to eq(false)
   end
@@ -44,7 +29,7 @@ RSpec.describe CodingChallenges::PalindromeLinkedList do
     head =
       ListNode.new(1)
 
-    result = subject.is_palindrome(head)
+    result = is_palindrome(head)
 
     expect(result).to eq(true)
   end
@@ -56,7 +41,7 @@ RSpec.describe CodingChallenges::PalindromeLinkedList do
           ListNode.new(3,
           )))
 
-    result = subject.is_palindrome(head)
+    result = is_palindrome(head)
 
     expect(result).to eq(false)
   end
@@ -68,7 +53,7 @@ RSpec.describe CodingChallenges::PalindromeLinkedList do
           ListNode.new(3,
           )))
 
-    result = subject.is_palindrome(head)
+    result = is_palindrome(head)
 
     expect(result).to eq(true)
   end

@@ -1,12 +1,10 @@
 require "coding_challenges/letter_combinations_of_a_phone_number"
 
-RSpec.describe CodingChallenges::LetterCombinationsOfAPhoneNumber do
-  subject { CodingChallenges::LetterCombinationsOfAPhoneNumber.new }
-
+RSpec.describe "Solution" do
   it "3" do
     digits = ""
 
-    result = subject.letter_combinations(digits)
+    result = letter_combinations(digits)
 
     expect(result).to be_empty
   end
@@ -14,7 +12,7 @@ RSpec.describe CodingChallenges::LetterCombinationsOfAPhoneNumber do
   it "2" do
     digits = "2"
 
-    result = subject.letter_combinations(digits)
+    result = letter_combinations(digits)
 
     expect(result).to contain_exactly("a", "b", "c")
   end
@@ -22,7 +20,7 @@ RSpec.describe CodingChallenges::LetterCombinationsOfAPhoneNumber do
   it "1" do
     digits = "23"
 
-    result = subject.letter_combinations(digits)
+    result = letter_combinations(digits)
 
     expect(result).to contain_exactly("ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf")
   end

@@ -1,8 +1,6 @@
 require "coding_challenges/populating_next_right_pointers_in_each_node"
 
-RSpec.describe CodingChallenges::PopulatingNextRightPointersInEachNode do
-  subject { CodingChallenges::PopulatingNextRightPointersInEachNode.new }
-
+RSpec.describe "Solution" do
   it "4" do
     root = TreeNode.new(1)
 

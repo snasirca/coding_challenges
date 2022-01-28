@@ -1,12 +1,10 @@
 require "coding_challenges/longest_common_prefix"
 
-RSpec.describe CodingChallenges::LongestCommonPrefix do
-  subject { CodingChallenges::LongestCommonPrefix.new }
-
+RSpec.describe "Solution" do
   it "1" do
     strs = ["flower","flow","flight"]
 
-    result = subject.longest_common_prefix(strs)
+    result = longest_common_prefix(strs)
 
     expect(result).to eq("fl")
   end
@@ -14,7 +12,7 @@ RSpec.describe CodingChallenges::LongestCommonPrefix do
   it "2" do
     strs = ["flow","flow","flow"]
 
-    result = subject.longest_common_prefix(strs)
+    result = longest_common_prefix(strs)
 
     expect(result).to eq("flow")
   end
@@ -22,7 +20,7 @@ RSpec.describe CodingChallenges::LongestCommonPrefix do
   it "3" do
     strs = ["dog", "racecar", "car"]
 
-    result = subject.longest_common_prefix(strs)
+    result = longest_common_prefix(strs)
 
     expect(result).to eq("")
   end
@@ -30,7 +28,7 @@ RSpec.describe CodingChallenges::LongestCommonPrefix do
   it "4" do
     strs = ["flow","flowed","flower"]
 
-    result = subject.longest_common_prefix(strs)
+    result = longest_common_prefix(strs)
 
     expect(result).to eq("flow")
   end
@@ -38,7 +36,7 @@ RSpec.describe CodingChallenges::LongestCommonPrefix do
   it "5" do
     strs = ["","flowed","flower"]
 
-    result = subject.longest_common_prefix(strs)
+    result = longest_common_prefix(strs)
 
     expect(result).to eq("")
   end
@@ -46,7 +44,7 @@ RSpec.describe CodingChallenges::LongestCommonPrefix do
   it "6" do
     strs = ["","",""]
 
-    result = subject.longest_common_prefix(strs)
+    result = longest_common_prefix(strs)
 
     expect(result).to eq("")
   end

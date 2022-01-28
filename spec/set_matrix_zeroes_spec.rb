@@ -1,12 +1,10 @@
 require "coding_challenges/set_matrix_zeroes"
 
-RSpec.describe CodingChallenges::SetMatrixZeroes do
-  subject { CodingChallenges::SetMatrixZeroes.new }
-
+RSpec.describe "Solution" do
   it "1" do
     matrix = [[1, 1, 1], [1, 0, 1], [1, 1, 1]]
 
-    result = subject.set_zeroes(matrix)
+    result = set_zeroes(matrix)
 
     expect(result).to eq([[1, 0, 1], [0, 0, 0], [1, 0, 1]])
   end
@@ -14,7 +12,7 @@ RSpec.describe CodingChallenges::SetMatrixZeroes do
   it "2" do
     matrix = [[0, 1, 2, 0], [3, 4, 5, 2], [1, 3, 1, 5]]
 
-    result = subject.set_zeroes(matrix)
+    result = set_zeroes(matrix)
 
     expect(result).to eq([[0, 0, 0, 0], [0, 4, 5, 0], [0, 3, 1, 0]])
   end
@@ -22,7 +20,7 @@ RSpec.describe CodingChallenges::SetMatrixZeroes do
   it "3" do
     matrix = [[0]]
 
-    result = subject.set_zeroes(matrix)
+    result = set_zeroes(matrix)
 
     expect(result).to eq([[0]])
   end
@@ -30,7 +28,7 @@ RSpec.describe CodingChallenges::SetMatrixZeroes do
   it "4" do
     matrix = [[1]]
 
-    result = subject.set_zeroes(matrix)
+    result = set_zeroes(matrix)
 
     expect(result).to eq([[1]])
   end
@@ -38,7 +36,7 @@ RSpec.describe CodingChallenges::SetMatrixZeroes do
   it "5" do
     matrix = [[1, 2], [1, 2]]
 
-    result = subject.set_zeroes(matrix)
+    result = set_zeroes(matrix)
 
     expect(result).to eq([[1, 2], [1, 2]])
   end
@@ -46,7 +44,7 @@ RSpec.describe CodingChallenges::SetMatrixZeroes do
   it "6" do
     matrix = [[1, 2], [1, 0]]
 
-    result = subject.set_zeroes(matrix)
+    result = set_zeroes(matrix)
 
     expect(result).to eq([[1, 0], [0, 0]])
   end
@@ -54,7 +52,7 @@ RSpec.describe CodingChallenges::SetMatrixZeroes do
   it "7" do
     matrix = [[1, 2, 3, 4], [5, 0, 7, 8], [0, 10, 11, 12], [13, 14, 15, 0]]
 
-    result = subject.set_zeroes(matrix)
+    result = set_zeroes(matrix)
 
     expect(result).to eq([[0, 0, 3, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]])
   end
@@ -62,7 +60,7 @@ RSpec.describe CodingChallenges::SetMatrixZeroes do
   it "8" do
     matrix = [[1, 0, 3]]
 
-    result = subject.set_zeroes(matrix)
+    result = set_zeroes(matrix)
 
     expect(result).to eq([[0, 0, 0]])
   end

@@ -1,21 +1,6 @@
 require "coding_challenges/merge_two_sorted_lists"
 
-RSpec.describe CodingChallenges::MergeTwoSortedLists do
-  subject { CodingChallenges::MergeTwoSortedLists.new }
-
-  class ListNode
-    attr_accessor :val, :next
-
-    def initialize(val, next_val = nil)
-      @val = val
-      @next = next_val
-    end
-
-    def to_s
-      "{val: #{@val}, next: #{@next.val if @next}}"
-    end
-  end
-
+RSpec.describe "Solution" do
   it "1" do
     list1 =
       ListNode.new(1,
@@ -28,7 +13,7 @@ RSpec.describe CodingChallenges::MergeTwoSortedLists do
           ListNode.new(4,
           )))
 
-    result = subject.merge_two_lists(list1, list2)
+    result = merge_two_lists(list1, list2)
 
     expect(result.val).to eq(1)
     expect(result.next.val).to eq(1)
@@ -43,7 +28,7 @@ RSpec.describe CodingChallenges::MergeTwoSortedLists do
     list1 = nil
     list2 = nil
 
-    result = subject.merge_two_lists(list1, list2)
+    result = merge_two_lists(list1, list2)
 
     expect(result).to eq(nil)
   end
@@ -52,7 +37,7 @@ RSpec.describe CodingChallenges::MergeTwoSortedLists do
     list1 = nil
     list2 = ListNode.new(0)
 
-    result = subject.merge_two_lists(list1, list2)
+    result = merge_two_lists(list1, list2)
 
     expect(result.val).to eq(0)
     expect(result.next).to eq(nil)
@@ -62,7 +47,7 @@ RSpec.describe CodingChallenges::MergeTwoSortedLists do
     list1 = ListNode.new(0)
     list2 = nil
 
-    result = subject.merge_two_lists(list1, list2)
+    result = merge_two_lists(list1, list2)
 
     expect(result.val).to eq(0)
     expect(result.next).to eq(nil)
@@ -72,7 +57,7 @@ RSpec.describe CodingChallenges::MergeTwoSortedLists do
     list1 = ListNode.new(1)
     list2 = ListNode.new(1)
 
-    result = subject.merge_two_lists(list1, list2)
+    result = merge_two_lists(list1, list2)
 
     expect(result.val).to eq(1)
     expect(result.next.val).to eq(1)
@@ -83,7 +68,7 @@ RSpec.describe CodingChallenges::MergeTwoSortedLists do
     list1 = ListNode.new(1)
     list2 = ListNode.new(1, ListNode.new(2))
 
-    result = subject.merge_two_lists(list1, list2)
+    result = merge_two_lists(list1, list2)
 
     expect(result.val).to eq(1)
     expect(result.next.val).to eq(1)
@@ -95,7 +80,7 @@ RSpec.describe CodingChallenges::MergeTwoSortedLists do
     list1 = ListNode.new(1, ListNode.new(2))
     list2 = ListNode.new(1)
 
-    result = subject.merge_two_lists(list1, list2)
+    result = merge_two_lists(list1, list2)
 
     expect(result.val).to eq(1)
     expect(result.next.val).to eq(1)
@@ -107,7 +92,7 @@ RSpec.describe CodingChallenges::MergeTwoSortedLists do
     list1 = ListNode.new(2)
     list2 = ListNode.new(1)
 
-    result = subject.merge_two_lists(list1, list2)
+    result = merge_two_lists(list1, list2)
 
     expect(result.val).to eq(1)
     expect(result.next.val).to eq(2)
@@ -118,7 +103,7 @@ RSpec.describe CodingChallenges::MergeTwoSortedLists do
     list1 = ListNode.new(1)
     list2 = ListNode.new(2)
 
-    result = subject.merge_two_lists(list1, list2)
+    result = merge_two_lists(list1, list2)
 
     expect(result.val).to eq(1)
     expect(result.next.val).to eq(2)
