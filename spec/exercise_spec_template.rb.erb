@@ -1,12 +1,10 @@
 require "coding_challenges/<%= ENV["EXERCISE_KEY"] %>"
 
-RSpec.describe CodingChallenges::<%= ENV["EXERCISE_CLASS_NAME"] %> do
-  subject { CodingChallenges::<%= ENV["EXERCISE_CLASS_NAME"] %>.new }
-
+RSpec.describe "Solution" do
   it "1" do
     nums = [1, 2, 3]
 
-    result = subject.<%= ENV["EXERCISE_MAIN_METHOD"] %>
+    result = <%= ENV["EXERCISE_MAIN_METHOD"] %>
 
     expect(result).to eq(true)
   end
