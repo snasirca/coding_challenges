@@ -1,3 +1,5 @@
+# - Didn't do something about the magic strings and magic numbers
+
 require 'rspec/autorun'
 
 class GildedRose
@@ -7,49 +9,32 @@ class GildedRose
 
   def update_quality()
     @items.each do |item|
-      iterate_quality(item)
-      iterate_expires_in(item)
-      apply_expired_penalty(item)
+      case item.name
+      when "Aged Brie"
+        update_aged_brie(item)
+      when "Rock"
+      else
+        update_regular(item)
+      end
     end
   end
 
   private
 
-  def iterate_quality(item)
-    return if item.name == "Rock"
+  def update_regular(item)
+    conjured_factor = item.name.start_with?("Conjured ") ? 2 : 1
 
-    if item.name != "Aged Brie"
-      if item.quality > 0
-        item.quality -= 1
-        if item.name.start_with?("Conjured ")
-          item.quality -= 1
-        end
-      end
-    else
-      item.quality = [item.quality + 2, 50].min
-    end
+    item.quality -= 1 * conjured_factor
+    item.expires_in -= 1
+    item.quality -= 1 * conjured_factor if item.expires_in < 0
   end
 
-  def iterate_expires_in(item)
-    return unless item.name != "Rock"
-
-    item.expires_in = item.expires_in - 1
-  end
-
-  def apply_expired_penalty(item)
-    if item.expires_in < 0
-      if item.name != "Aged Brie"
-        item.quality -= 1
-        if item.name.start_with?("Conjured ")
-          item.quality -= 1
-        end
-      else
-        item.quality = 0
-      end
-    end
+  def update_aged_brie(item)
+    item.quality = [item.quality + 2, 50].min
+    item.expires_in -= 1
+    item.quality = 0 if item.expires_in < 0
   end
 end
-
 
 # Please don't touch this class, I like it
 # just the way it is
