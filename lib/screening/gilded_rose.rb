@@ -7,32 +7,68 @@ class GildedRose
     @items = items
   end
 
-  def update_quality()
+  def update_quality
     @items.each do |item|
       case item.name
       when "Aged Brie"
-        update_aged_brie(item)
+        AgedBrieUpdater.new(item).update_quality
       when "Rock"
       else
-        update_regular(item)
+        RegularItemUpdater.new(item).update_quality
       end
     end
+  end
+end
+
+class AgedBrieUpdater
+  def initialize(item)
+    @item = item
+  end
+
+  QUALITY_INCREMENT_AMOUNT = 2
+  MAX_QUALITY = 50
+  MIN_QUALITY = 0
+  EXPIRATION_DECREMENT_AMOUNT = 1
+
+  def update_quality
+    @item.quality = [@item.quality + QUALITY_INCREMENT_AMOUNT, MAX_QUALITY].min
+    @item.expires_in -= EXPIRATION_DECREMENT_AMOUNT
+    @item.quality = MIN_QUALITY if expired?
   end
 
   private
 
-  def update_regular(item)
-    conjured_factor = item.name.start_with?("Conjured ") ? 2 : 1
+  def expired?
+    @item.expires_in < 0
+  end
+end
 
-    item.quality -= 1 * conjured_factor
-    item.expires_in -= 1
-    item.quality -= 1 * conjured_factor if item.expires_in < 0
+class RegularItemUpdater
+  def initialize(item)
+    @item = item
   end
 
-  def update_aged_brie(item)
-    item.quality = [item.quality + 2, 50].min
-    item.expires_in -= 1
-    item.quality = 0 if item.expires_in < 0
+  QUALITY_DECREMENT_AMOUNT = 1
+  EXPIRATION_DECREMENT_AMOUNT = 1
+
+  def update_quality
+    @item.quality -= QUALITY_DECREMENT_AMOUNT * conjured_factor
+    @item.expires_in -= EXPIRATION_DECREMENT_AMOUNT
+    @item.quality -= QUALITY_DECREMENT_AMOUNT * conjured_factor if expired?
+  end
+
+  private
+
+  def conjured_factor
+    @_conjured_factor ||= conjured? ? 2 : 1
+  end
+
+  def conjured?
+    @item.name.start_with?("Conjured ")
+  end
+
+  def expired?
+    @item.expires_in < 0
   end
 end
 
