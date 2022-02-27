@@ -31,8 +31,8 @@ class AgedBrieUpdater
   EXPIRATION_DECREMENT_AMOUNT = 1
 
   def update_quality
-    @item.quality = [@item.quality + QUALITY_INCREMENT_AMOUNT, MAX_QUALITY].min
     @item.expires_in -= EXPIRATION_DECREMENT_AMOUNT
+    @item.quality = [@item.quality + QUALITY_INCREMENT_AMOUNT, MAX_QUALITY].min
     @item.quality = MIN_QUALITY if expired?
   end
 
@@ -52,12 +52,15 @@ class RegularItemUpdater
   EXPIRATION_DECREMENT_AMOUNT = 1
 
   def update_quality
-    @item.quality -= QUALITY_DECREMENT_AMOUNT * conjured_factor
     @item.expires_in -= EXPIRATION_DECREMENT_AMOUNT
-    @item.quality -= QUALITY_DECREMENT_AMOUNT * conjured_factor if expired?
+    @item.quality -= QUALITY_DECREMENT_AMOUNT * conjured_factor * expiration_factor
   end
 
   private
+
+  def expiration_factor
+    @_expiration_factor ||= expired? ? 2 : 1
+  end
 
   def conjured_factor
     @_conjured_factor ||= conjured? ? 2 : 1
