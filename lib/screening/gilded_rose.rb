@@ -50,6 +50,7 @@ class RegularItemUpdater
 
   QUALITY_DECREMENT_AMOUNT = 1
   EXPIRATION_DECREMENT_AMOUNT = 1
+  CONJURED_PREFIX = "Conjured "
 
   def update_quality
     @item.expires_in -= EXPIRATION_DECREMENT_AMOUNT
@@ -67,7 +68,7 @@ class RegularItemUpdater
   end
 
   def conjured?
-    @item.name.start_with?("Conjured ")
+    @item.name.start_with?(CONJURED_PREFIX)
   end
 
   def expired?
