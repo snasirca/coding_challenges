@@ -1,24 +1,4 @@
-# - Didn't do something about the magic strings and magic numbers
-
 require 'rspec/autorun'
-
-class GildedRose
-  def initialize(items)
-    @items = items
-  end
-
-  def update_quality
-    @items.each do |item|
-      case item.name
-      when "Aged Brie"
-        AgedBrieUpdater.new(item).update_quality
-      when "Rock"
-      else
-        RegularItemUpdater.new(item).update_quality
-      end
-    end
-  end
-end
 
 class AgedBrieUpdater
   def initialize(item)
@@ -32,8 +12,13 @@ class AgedBrieUpdater
 
   def update_quality
     @item.expires_in -= EXPIRATION_DECREMENT_AMOUNT
-    @item.quality = [@item.quality + QUALITY_INCREMENT_AMOUNT, MAX_QUALITY].min
-    @item.quality = MIN_QUALITY if expired?
+
+    if expired?
+      @item.quality = MIN_QUALITY
+    else
+      @item.quality =
+        [@item.quality + QUALITY_INCREMENT_AMOUNT, MAX_QUALITY].min
+    end
   end
 
   private
@@ -54,7 +39,8 @@ class RegularItemUpdater
 
   def update_quality
     @item.expires_in -= EXPIRATION_DECREMENT_AMOUNT
-    @item.quality -= QUALITY_DECREMENT_AMOUNT * conjured_factor * expiration_factor
+    @item.quality -= QUALITY_DECREMENT_AMOUNT *
+      conjured_factor * expiration_factor
   end
 
   private
@@ -73,6 +59,46 @@ class RegularItemUpdater
 
   def expired?
     @item.expires_in < 0
+  end
+end
+
+class GildedRose
+  def initialize(items)
+    @items = items
+  end
+
+  FIXED_QUALITY_ITEMS = ["Rock"]
+
+  ITEM_UPDATERS = {
+    "Aged Brie" => AgedBrieUpdater
+  }
+  DEFAULT_ITEM_UPDATER = RegularItemUpdater
+
+  def update_quality
+    @items
+      .reject { |item| fixed_quality_item?(item) }
+      .map { |item| updater_for(item) }
+      .each(&:update_quality)
+  end
+
+  private
+
+  def fixed_quality_item?(item)
+    FIXED_QUALITY_ITEMS
+      .any? { |fixed_quality_item| item_is?(item, fixed_quality_item) }
+  end
+
+  def updater_for(item)
+    matching_updater = ITEM_UPDATERS
+      .keys
+      .find { |updater_item| item_is?(item, updater_item) }
+    matching_updater ?
+      ITEM_UPDATERS[matching_updater].new(item) :
+      DEFAULT_ITEM_UPDATER.new(item)
+  end
+
+  def item_is?(item, item_name)
+    item.name.end_with?(item_name)
   end
 end
 
@@ -248,5 +274,3 @@ RSpec.describe GildedRose do
     Item.new(name, expires_in, quality)
   end
 end
-#
-#
